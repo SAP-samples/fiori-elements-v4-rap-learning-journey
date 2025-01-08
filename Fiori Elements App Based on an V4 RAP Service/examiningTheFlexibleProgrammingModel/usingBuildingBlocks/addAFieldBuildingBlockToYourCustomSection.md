@@ -1,6 +1,6 @@
 ### Exercise: Add a Field Building Block to Your Custom Section
 
-##### After completing the exercise, the geo map file, `GeoMap.fragment.xml` should resemble the following:
+##### After completing the exercise, the geo map file, `GeoMap.fragment.xml` should look like the one below:
 
 <details>
     <summary>Solution:</summary>
