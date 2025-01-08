@@ -1,6 +1,6 @@
 ### Exercise: Add a Custom Section to the Object Page
 
-##### After completing the exercise, the geo map file, `GeoMap.fragment.xml` should resemble the following:
+##### After completing the exercise, the geo map file, `GeoMap.fragment.xml` should look like the one below:
 
 <details>
     <summary>Solution:</summary>
