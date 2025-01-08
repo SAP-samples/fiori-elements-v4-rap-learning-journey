@@ -1,11 +1,19 @@
-### Exercise: Add an Identification Section to the Object Page Body
+### Exercise: Enhance the Header with Price and Status Information of a Specific Travel 
 
-##### After completing the exercise, the metadata extension file `ZC_FE_TRAVEL_######` should resemble the following:
+##### After completing the exercise, the metadata extension file `ZC_FE_TRAVEL_######` should look like the one below:
+
+##### Instructions:
+
+1. Replace ###### with the appropriate package number assigned to your project.
+2. Update the following occurrences:
+   * ZC_FE_Travel_###### (In the annotate view statement).
+3. Ensure consistency in your package number and position values throughout the file.
 
 <details>
     <summary>Solution:</summary>
 
 ```abap
+
 @Metadata.layer: #CORE
 @UI.headerInfo: {
     typeNamePlural: 'Travels',
@@ -27,17 +35,6 @@ with
         position: 20,
         type: #DATAPOINT_REFERENCE,
         targetQualifier: 'StatusData'
-    },
-    {
-        label: 'General Information',
-        type: #COLLECTION,
-        id: 'GeneralInfo',
-        position: 10
-    },
-    {
-        label: 'General',
-        type: #IDENTIFICATION_REFERENCE,
-        parentId: 'GeneralInfo' /* The section id */
     }]
 
     @UI.lineItem: [{position: 10}]
@@ -46,12 +43,10 @@ with
 
     @UI.lineItem: [{position: 20}]
     @UI.selectionField: [{position: 20}]
-    @UI.identification: [{position: 10}]
     AgencyID;
 
     @UI.lineItem: [{position: 30}]
     @UI.selectionField: [{position: 30}]
-    @UI.identification: [{position: 20}]
     CustomerID;
 
     @UI.lineItem: [{position: 40}]
@@ -75,5 +70,6 @@ with
     @UI.lineItem: [{position: 90}]
     LastChangedAt;
 }
+
 ```
 </details>

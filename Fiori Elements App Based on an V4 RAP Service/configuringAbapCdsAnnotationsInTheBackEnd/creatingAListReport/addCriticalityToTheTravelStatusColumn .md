@@ -1,6 +1,16 @@
 ### Exercise: Add Criticality to the Travel Status Column
 
-##### After completing the exercise, the ABAP CDS view file, `ZC_FE_TRAVEL_######` should resemble the following:
+##### After completing the exercise, the ABAP CDS view file for Travel entity, `ZI_FE_TRAVEL_######` should look like the one below:
+
+##### Instructions:
+
+1. Replace ###### with the appropriate package number assigned to your project.
+2. Update the following occurrences:
+   * ZI_FE_Travel_###### (In the define statement).
+   * zfe_atrav_###### (In the as select from statement).
+   * zi_fe_stat_###### (In the _TravelStatus association).
+   * ZI_FE_Booking_###### (In the _Booking composition).
+3. Ensure consistency in your package number and position values throughout the file.
 
  <details>
     <summary>Solution:</summary>
@@ -56,7 +66,16 @@ define root view entity ZI_FE_Travel_001191
 ```
 </details>
 
-##### After completing the exercise, the metadata extension file `ZC_FE_TRAVEL_######` should resemble the following:
+##### After completing the exercise, the metadata extension file `ZC_FE_TRAVEL_######` should should look like the one below:
+
+##### Instructions:
+
+1. Replace ###### with the appropriate package number assigned to your project.
+2. Update the following occurrences:
+   * ZC_FE_Travel_###### (In the annotate view statement).
+   * Update the position value for OverallStatus:
+     * Replace ## with the desired position number (e.g., 80, or any appropriate value based on the UI requirements).
+3. Ensure consistency in your package number and position values throughout the file.
 
  <details>
     <summary>Solution:</summary>
