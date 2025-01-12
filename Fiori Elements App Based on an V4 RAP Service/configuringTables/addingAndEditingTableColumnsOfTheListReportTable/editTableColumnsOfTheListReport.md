@@ -4,14 +4,15 @@
 
 ##### Instructions:
 
-1. Look for changes in the file located at travels > webapp > annotations > annotation.xml under the specified `<Record>` tags.
-2. The @UI.LineItem record for 'OverallStatus' is placed before 'BookingFee'.
-3. The @UI.LineItem record for 'Description' is added in the second position.
+1. Look for changes in the file located at travels > webapp > annotations > annotation.xml under the specified `<Annotation>` and `<Record>` tags.
+2. The UI.LineItem record for 'OverallStatus' is placed before 'BookingFee'.
+3. The UI.LineItem record for 'Description' is added in the second position.
    
 <details>
     <summary>Solution:</summary>
 
 ```abap
+<Annotation Term="UI.LineItem">
     <Collection>
         <Record Type="UI.DataField">
             <PropertyValue Property="Value" Path="TravelID"/>
@@ -42,5 +43,6 @@
             <PropertyValue Property="Value" Path="TotalPrice"/>
         </Record>
     </Collection>
+</Annotation>
 ```
 </details>
