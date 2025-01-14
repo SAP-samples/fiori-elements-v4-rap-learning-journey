@@ -1,13 +1,8 @@
 ### Exercise: Add a Title and a Description to the Header Area of the Object Page
 
-##### After completing the exercise, the metadata extension file `ZC_FE_TRAVEL_######` should look like the one below:
+##### After completing the exercise, the metadata extension file for Travel entity, `ZC_FE_TRAVEL_######` should look like the one below:
 
-##### Instructions:
-
-1. Replace ###### with the appropriate package number assigned to your project.
-2. Update the following occurrences:
-   * ZC_FE_Travel_###### (In the annotate view statement).
-3. Ensure consistency in your package number and position values throughout the file.
+##### Replace all the occurances of ###### with the unique package number assigned to your project.
 
 <details>
     <summary>Solution:</summary>
