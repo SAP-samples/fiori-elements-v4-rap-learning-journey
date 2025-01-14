@@ -1,80 +1,130 @@
 ### Exercise: Add a Bookings Table to the Object Page
 
-##### After completing the exercise, the `annotation.xml` file should look like the one below:
+##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations > annotation.xml` directory should look like the one below:
 
-##### Instructions:
-
-1. Look for changes in the file located at travels > webapp > annotations > annotation.xml under the specified `<Record>` tags.
-2. Refer to **Solution A** for the UI.ReferenceFacet record added to display a new section.
-3. Refer to **Solution B** for the UI.LineItem definition, which contains the table with the records you have configured, including the record for Airline Logo that was added.
-4. Refer to **Solution C** for the Common.Text annotation added for 'CarrierID' in the local annotation file.
-5. Refer to **Solution D** for the UI.TextArrangement annotation with TextOnly added for 'CustomerID'.
+##### In this exercise, the `UI.ReferenceFacet` record is added to display a new section titled "Bookings". A `UI.LineItem` annotation is added for the booking entity with all the relavant records. The `Common.Text` annotation is added for 'CarrierID' and a `UI.TextArrangement` annotation with `TextOnly` is applied to 'CustomerID'.
    
 <details>
-    <summary>Solution A:</summary>
+    <summary>Solution:</summary>
 
 ```abap
-   <Record Type="UI.ReferenceFacet">
-       <PropertyValue Property="Label" String="{@i18n>bookings}"/>
-       <PropertyValue Property="ID" String="i18nbookings"/>
-       <PropertyValue Property="Target" AnnotationPath="_Booking/@UI.LineItem#i18nbookings"/>
-   </Record>
-```
-</details>
-
-<details>
-    <summary>Solution B:</summary>
-
-```abap
-<Annotation Term="UI.LineItem" Qualifier="i18nbookings">
-    <Collection>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="_Carrier/AirlinePicURL"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="BookingID"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="BookingDate"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="CarrierID"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="ConnectionID"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="CustomerID"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="FlightDate"/>
-        </Record>
-        <Record Type="UI.DataField">
-            <PropertyValue Property="Value" Path="FlightPrice"/>
-        </Record>
-    </Collection>
-</Annotation>
-```
-</details>
-
-<details>
-    <summary>Solution C:</summary>
-
-```abap
-    <Annotations Target="SAP__self.BookingType/CarrierID">
-        <Annotation Term="Common.Text" Path="_Carrier/Name"/>
-    </Annotations>
-```
-</details>
-
-<details>
-    <summary>Solution D:</summary>
-
-```abap
-   <Annotations Target="SAP__self.BookingType/CustomerID">
-       <Annotation Term="Common.Text" Path="_Customer/LastName">
-           <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
-       </Annotation>
-   </Annotations>
+ <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata4/sap/zui_fe_travel_001191_o4/srvd/sap/zui_fe_travel_001191_o4/0001/$metadata">
+        <edmx:Include Namespace="com.sap.gateway.srvd.zfe_travel_001191.v0001" Alias="SAP__self"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="SAP__self.TravelType">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TravelID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Description"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="AgencyID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BeginDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="EndDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Criticality" Path="OverallStatusCriticality"/>
+                            <PropertyValue Property="Value" Path="OverallStatus"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BookingFee"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TotalPrice"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="ID" String="GeneralInfo"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.Identification"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Prices"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#PricesGroup"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="Dates"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#DatesGroup"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="{@i18n>bookings}"/>
+                            <PropertyValue Property="ID" String="i18nbookings"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Booking/@UI.LineItem#i18nbookings"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.BookingType">
+                <Annotation Term="UI.LineItem" Qualifier="i18nbookings">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="_Carrier/AirlinePicURL"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BookingID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="BookingDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CarrierID"/>
+                            <PropertyValue Property="Label" String="{@i18n>airline}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="ConnectionID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerID"/>
+                            <PropertyValue Property="Label" String="{@i18n>customer}"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FlightDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="FlightPrice"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.BookingType/CustomerID">
+                <Annotation Term="Common.Text" Path="_Customer/LastName">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.BookingType/CarrierID">
+                <Annotation Term="Common.Text" Path="_Carrier/Name"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
 ```
 </details>
