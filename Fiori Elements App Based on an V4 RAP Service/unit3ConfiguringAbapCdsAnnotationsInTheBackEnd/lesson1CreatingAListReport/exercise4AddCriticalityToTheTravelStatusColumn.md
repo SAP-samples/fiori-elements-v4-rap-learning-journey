@@ -2,15 +2,8 @@
 
 ##### After completing the exercise, the ABAP CDS view file for Travel entity, `ZI_FE_TRAVEL_######` should look like the one below:
 
-##### Instructions:
+##### Replace all the occurances of ###### with the unique package number assigned to your project.
 
-1. Replace ###### with the appropriate package number assigned to your project.
-2. Update the following occurrences:
-   * ZI_FE_Travel_###### (In the define statement).
-   * zfe_atrav_###### (In the as select from statement).
-   * zi_fe_stat_###### (In the _TravelStatus association).
-   * ZI_FE_Booking_###### (In the _Booking composition).
-3. Ensure consistency in your package number and position values throughout the file.
 
  <details>
     <summary>Solution:</summary>
@@ -19,13 +12,13 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 @EndUserText.label: 'CDS View forTravel'
-define root view entity ZI_FE_Travel_001191
-  as select from zfe_atrav_001191
+define root view entity ZI_FE_Travel_######
+  as select from zfe_atrav_######
   association [0..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
   association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
   association [0..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
-  association [0..1] to zi_fe_stat_001191 as _TravelStatus on $projection.OverallStatus = _TravelStatus.TravelStatusId
-  composition [0..*] of ZI_FE_Booking_001191 as _Booking
+  association [0..1] to zi_fe_stat_###### as _TravelStatus on $projection.OverallStatus = _TravelStatus.TravelStatusId
+  composition [0..*] of ZI_FE_Booking_###### as _Booking
 {
   key travel_uuid as TravelUUID,
   travel_id as TravelID,
@@ -68,14 +61,7 @@ define root view entity ZI_FE_Travel_001191
 
 ##### After completing the exercise, the metadata extension file `ZC_FE_TRAVEL_######` should should look like the one below:
 
-##### Instructions:
-
-1. Replace ###### with the appropriate package number assigned to your project.
-2. Update the following occurrences:
-   * ZC_FE_Travel_###### (In the annotate view statement).
-   * Update the position value for OverallStatus:
-     * Replace ## with the desired position number (e.g., 80, or any appropriate value based on the UI requirements).
-3. Ensure consistency in your package number and position values throughout the file.
+##### Replace all the occurances of ###### with the unique package number assigned to your project.
 
  <details>
     <summary>Solution:</summary>
@@ -109,7 +95,7 @@ with
     @UI.lineItem: [{position: 70}]
     TotalPrice;
 
-    @UI.lineItem: [{position: ##, criticality: 'OverallStatusCriticality'}]
+    @UI.lineItem: [{position: 80, criticality: 'OverallStatusCriticality'}]
     OverallStatus;
 
     @UI.lineItem: [{position: 90}]
