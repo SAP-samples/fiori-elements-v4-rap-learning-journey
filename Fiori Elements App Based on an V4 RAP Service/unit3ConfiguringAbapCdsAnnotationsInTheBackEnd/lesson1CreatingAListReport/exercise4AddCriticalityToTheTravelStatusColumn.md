@@ -4,7 +4,6 @@
 
 ##### Replace all the occurances of ###### with the unique package number assigned to your project.
 
-
  <details>
     <summary>Solution:</summary>
 
