@@ -2,10 +2,10 @@
 
 ##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations > annotation.xml` directory should look like the one below:
 
-##### In this exercise, the `UI.HeaderInfo` is added for header and the `UI.headerFacets` records added for 5 data point sections, where each refererences a corresponding `UI.DataPoint` annotation.
+##### In this exercise, the `UI.HeaderInfo` is added for header and the `UI.headerFacets` records are added for 5 data point sections, where each refererences a corresponding `UI.DataPoint` annotation.
    
 <details>
-    <summary>Solution A:</summary>
+    <summary>Solution:</summary>
 
 ```abap
 <edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
