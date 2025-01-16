@@ -1,10 +1,9 @@
 ### Exercise: Edit Table Columns of the List Report
 
-##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations > annotation.xml` directory should look like the one below:
+##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations` folder should look like the one below:
 
-##### In this exercise, the UI.LineItem records are added or changed. The 'Overallstatus' column is placed before the 'BookingFee' column. The description column is added in the second position.
+##### In this exercise, the `UI.LineItem` records are added or changed. The 'Overallstatus' column is placed before the 'BookingFee' column. The description column is added in the second position.
 
-In this exercise, the UI.LineItem records are added or changed. The 'Overallstatus' column is placed before the 'BookingFee' column. The description column is added in the second position.
 <details>
     <summary>Solution:</summary>
 
