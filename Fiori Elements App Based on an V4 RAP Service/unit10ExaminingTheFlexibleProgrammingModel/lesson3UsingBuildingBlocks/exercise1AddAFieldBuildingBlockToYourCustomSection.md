@@ -1,6 +1,6 @@
 ### Exercise: Add a Field Building Block to Your Custom Section
 
-##### After completing the exercise, the `GeoMap.fragment.xml` file in the `travels > webapp > ext > fragment > GeoMap.fragment.xml` directory should look like the one below:
+##### After completing the exercise, the `GeoMap.fragment.xml` file in the `travels > webapp > ext > fragment` folder should look like the one below:
 
 <details>
     <summary>Solution:</summary>
