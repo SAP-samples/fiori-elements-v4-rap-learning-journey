@@ -2,7 +2,7 @@
 
 ##### After completing the exercise, the ABAP CDS view file for Travel entity, `ZI_FE_TRAVEL_######` should look like the one below:
 
-##### Replace all the occurances of ###### with the unique package number assigned to your project.
+##### Replace all the occurances of `######` with the unique package number assigned to your project.
 
  <details>
     <summary>Solution:</summary>
@@ -60,7 +60,7 @@ define root view entity ZI_FE_Travel_######
 
 ##### After completing the exercise, the metadata extension file for Travel entity, `ZC_FE_TRAVEL_######` should look like the one below:
 
-##### Replace all the occurances of ###### with the unique package number assigned to your project.
+##### Replace all the occurances of `######` with the unique package number assigned to your project.
 
  <details>
     <summary>Solution:</summary>
