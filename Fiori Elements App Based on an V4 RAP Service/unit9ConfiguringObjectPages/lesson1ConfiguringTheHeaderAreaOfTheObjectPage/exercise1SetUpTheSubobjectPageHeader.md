@@ -1,8 +1,8 @@
 ### Exercise: Set Up the Subobject Page Header
 
-##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations > annotation.xml` directory should look like the one below:
+##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations` folder should look like the one below:
 
-##### In this exercise, the `UI.HeaderInfo` is added for header and the `UI.headerFacets` records are added for 5 data point sections, where each refererences a corresponding `UI.DataPoint` annotation.
+##### In this exercise, the `UI.HeaderInfo` annotation is added for header and the `UI.headerFacets` records are added for 5 data point sections, where each refererences a corresponding `UI.DataPoint` annotation.
    
 <details>
     <summary>Solution:</summary>
