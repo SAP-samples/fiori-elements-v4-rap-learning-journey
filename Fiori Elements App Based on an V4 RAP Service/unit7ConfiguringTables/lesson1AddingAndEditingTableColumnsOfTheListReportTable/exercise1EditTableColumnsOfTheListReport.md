@@ -2,8 +2,9 @@
 
 ##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations > annotation.xml` directory should look like the one below:
 
-##### In this exercise, the UI.LineItem record for 'OverallStatus' is placed before 'BookingFee', and for 'Description' is added in the second position.
+##### In this exercise, the UI.LineItem records are added or changed. The 'Overallstatus' column is placed before the 'BookingFee' column. The description column is added in the second position.
 
+In this exercise, the UI.LineItem records are added or changed. The 'Overallstatus' column is placed before the 'BookingFee' column. The description column is added in the second position.
 <details>
     <summary>Solution:</summary>
 
