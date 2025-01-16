@@ -4,6 +4,11 @@
 
 ##### Replace all the occurances of `######` with the unique package number assigned to your project.
 
+##### Key Differences Between Old (`/DMO/CL_FE_TRAVEL_GENERATOR`) and New (`ZDMO_CL_FE_TRAVEL_GENERATOR`) Generator Classes:
+- The inclusion of the annotation `@ObjectModel.sapObjectNodeType.name` in the new class.
+- The new generator class assigns an alias `Travel` to the **projection source** entity.
+- Semantic annotations for `CreatedBy`, `CreatedAt`, and `LastChangedBy`, which are included in the old class but omitted in the new class.
+
  <details>
     <summary>Solution:</summary>
 
@@ -11,13 +16,14 @@
 @AccessControl.authorizationCheck: #CHECK
 @Metadata.allowExtensions: true
 @EndUserText.label: 'CDS View forTravel'
-define root view entity ZI_FE_Travel_######
-  as select from zfe_atrav_######
+@ObjectModel.sapObjectNodeType.name: 'ZFE_Travel_######'
+define root view entity ZI_FE_TRAVEL_######
+  as select from zfe_atrav_###### as Travel
   association [0..1] to /DMO/I_Agency as _Agency on $projection.AgencyID = _Agency.AgencyID
   association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
   association [0..1] to /DMO/I_Customer as _Customer on $projection.CustomerID = _Customer.CustomerID
   association [0..1] to zi_fe_stat_###### as _TravelStatus on $projection.OverallStatus = _TravelStatus.TravelStatusId
-  composition [0..*] of ZI_FE_Booking_###### as _Booking
+  composition [0..*] of ZI_FE_BOOKING_###### as _Booking
 {
   key travel_uuid as TravelUUID,
   travel_id as TravelID,
@@ -31,18 +37,15 @@ define root view entity ZI_FE_Travel_######
   total_price as TotalPrice,
   currency_code as CurrencyCode,
   description as Description,
-  overall_status as OverallStatus,
   case overall_status
-    when 'O' then 2
-    when 'A' then 3
-    when 'X' then 1
-    else 0
+   when 'O' then 2
+   when 'A' then 3
+   when 'X' then 1
+   else 0
   end as OverallStatusCriticality,
-  @Semantics.user.createdBy: true
+  overall_status as OverallStatus,
   created_by as CreatedBy,
-  @Semantics.systemDateTime.createdAt: true
   created_at as CreatedAt,
-  @Semantics.user.lastChangedBy: true
   last_changed_by as LastChangedBy,
   @Semantics.systemDateTime.lastChangedAt: true
   last_changed_at as LastChangedAt,

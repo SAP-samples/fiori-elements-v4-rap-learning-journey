@@ -1,8 +1,12 @@
 ### Exercise: Add a Description Text Instead of Codes for the Overall Status
 
-##### After completing the exercise, the ABAP CDS projection view file for Travel entity, `ZC_FE_TRAVEL_######` should look like the one below:
+##### After completing the exercise, the ABAP CDS projection view file for the Travel entity, `ZC_FE_TRAVEL_######` should look like the one below:
 
 ##### Replace all the occurances of `######` with the unique package number assigned to your project.
+
+##### Key Differences Between Old (`/DMO/CL_FE_TRAVEL_GENERATOR`) and New (`ZDMO_CL_FE_TRAVEL_GENERATOR`) Generator Classes:
+  - The new generator class defines a **provider contract** as `transactional_query`.
+  - The new generator class assigns an alias `Travel` to the **projection source** entity. 
 
 <details>
     <summary>Solution:</summary>
@@ -13,8 +17,9 @@
 @EndUserText.label: 'Projection View forTravel'
 @ObjectModel.semanticKey: [ 'TravelID' ]
 @Search.searchable: true
-define root view entity ZC_FE_Travel_######
-  as projection on ZI_FE_Travel_######
+define root view entity ZC_FE_TRAVEL_######
+  provider contract transactional_query
+  as projection on ZI_FE_TRAVEL_###### as Travel
 {
   key TravelUUID,
   @Search.defaultSearchElement: true
@@ -51,7 +56,7 @@ define root view entity ZC_FE_Travel_######
   LastChangedBy,
   LastChangedAt,
   LocalLastChangedAt,
-  _Booking : redirected to composition child ZC_FE_Booking_######,
+  _Booking : redirected to composition child ZC_FE_BOOKING_######,
   _Agency,
   _Currency,
   _Customer,
