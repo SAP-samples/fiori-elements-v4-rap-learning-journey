@@ -1,8 +1,8 @@
 ### Exercise: Add Plane Details Section to the Subobject Page Body
 
-##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations > annotation.xml` directory should look like the one below:
+##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations` folder should look like the one below:
 
-##### In this exercise, `UI.Identification` annotation is added for the identification section, and a `UI.Facets` record is added to reference the `UI.Identification` annotation, creating a new section in the subobject page body.
+##### In this exercise, `UI.Identification` annotation is added for the identification section. A `UI.Facets` record is added to reference the `UI.Identification` annotation, creating a new section in the subobject page body.
 
 <details>
     <summary>Solution:</summary>
