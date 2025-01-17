@@ -7,7 +7,7 @@
 ##### Key Differences Between Old (`/DMO/CL_FE_TRAVEL_GENERATOR`) and New (`ZDMO_CL_FE_TRAVEL_GENERATOR`) Generator Classes:
 - The inclusion of the annotation `@ObjectModel.sapObjectNodeType.name` in the new class.
 - The new generator class assigns an alias `Travel` to the **projection source** entity.
-- Semantic annotations for `CreatedBy`, `CreatedAt`, and `LastChangedBy`, which are included in the old class but omitted in the new class.
+- Semantic annotations for `CreatedBy`, `CreatedAt`, and `LastChangedBy` are included in the old class but omitted in the new class.
 
  <details>
     <summary>Solution:</summary>
