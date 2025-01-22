@@ -1,6 +1,6 @@
 ### Exercise: Add a Custom Section to the Object Page
 
-##### After completing the exercise, the `GeoMap.fragment.xml` file in the `travels > webapp > ext > fragment` folder should look like the one below:
+##### After completing the exercise, the `GeoMap.fragment.xml` in the `travels > webapp > ext > fragment` folder should look like the one below:
 
 <details>
     <summary>Solution:</summary>
