@@ -1,6 +1,6 @@
 ### Exercise: Add a Bookings Table to the Object Page
 
-##### After completing the exercise, the `annotation.xml` file in the `travels > webapp > annotations` folder should look like the one below:
+##### After completing the exercise, the `annotation.xml` in the `travels > webapp > annotations` folder should look like the one below:
 
 ##### In this exercise, the `UI.ReferenceFacet` record is added to display a new section called "Bookings". A `UI.LineItem` annotation is added for the Booking entity with all the relavant records. The `Common.Text` annotation is added for 'CarrierID' and a `UI.TextArrangement` annotation with `TextOnly` is applied to 'CustomerID'.
    
