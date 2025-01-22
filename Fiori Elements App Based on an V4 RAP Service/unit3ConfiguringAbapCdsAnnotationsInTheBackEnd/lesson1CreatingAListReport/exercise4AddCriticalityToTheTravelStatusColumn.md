@@ -1,13 +1,8 @@
 ### Exercise: Add Criticality to the Travel Status Column
 
-##### After completing the exercise, the ABAP CDS view file for Travel entity, `ZI_FE_TRAVEL_######` should look like the one below:
+##### After completing the exercise, the ABAP CDS view for Travel entity, `ZI_FE_TRAVEL_######` should look like the one below:
 
 ##### Replace all the occurances of `######` with the unique package number assigned to your project.
-
-##### Key Differences Between Old (`/DMO/CL_FE_TRAVEL_GENERATOR`) and New (`ZDMO_CL_FE_TRAVEL_GENERATOR`) Generator Classes:
-- The inclusion of the annotation `@ObjectModel.sapObjectNodeType.name` in the new class.
-- The new generator class assigns an alias `Travel` to the **projection source** entity.
-- Semantic annotations for `CreatedBy`, `CreatedAt`, and `LastChangedBy` are included in the old class but omitted in the new class.
 
  <details>
     <summary>Solution:</summary>
@@ -61,7 +56,7 @@ define root view entity ZI_FE_TRAVEL_######
 ```
 </details>
 
-##### After completing the exercise, the metadata extension file for Travel entity, `ZC_FE_TRAVEL_######` should look like the one below:
+##### After completing the exercise, the metadata extension for Travel entity, `ZC_FE_TRAVEL_######` should look like the one below:
 
 ##### Replace all the occurances of `######` with the unique package number assigned to your project.
 
