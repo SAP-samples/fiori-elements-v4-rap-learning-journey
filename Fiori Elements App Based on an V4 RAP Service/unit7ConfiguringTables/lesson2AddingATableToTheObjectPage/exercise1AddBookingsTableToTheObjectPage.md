@@ -2,6 +2,8 @@
 
 ##### After completing the exercise, the `annotation.xml` in the `travels > webapp > annotations` folder should look like the one below:
 
+##### Replace all the occurances of `######` with the unique package number assigned to your project.
+
 ##### In this exercise, the `UI.ReferenceFacet` record is added to display a new section called "Bookings". A `UI.LineItem` annotation is added for the Booking entity with all the relavant records. The `Common.Text` annotation is added for 'CarrierID' and a `UI.TextArrangement` annotation with `TextOnly` is applied to 'CustomerID'.
    
 <details>
@@ -15,8 +17,8 @@
     <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
         <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
     </edmx:Reference>
-    <edmx:Reference Uri="/sap/opu/odata4/sap/zui_fe_travel_001191_o4/srvd/sap/zui_fe_travel_001191_o4/0001/$metadata">
-        <edmx:Include Namespace="com.sap.gateway.srvd.zfe_travel_001191.v0001" Alias="SAP__self"/>
+    <edmx:Reference Uri="/sap/opu/odata4/sap/zui_fe_travel_######_o4/srvd/sap/zui_fe_travel_######_o4/0001/$metadata">
+        <edmx:Include Namespace="com.sap.gateway.srvd.zfe_travel_######.v0001" Alias="SAP__self"/>
     </edmx:Reference>
     <edmx:DataServices>
         <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
