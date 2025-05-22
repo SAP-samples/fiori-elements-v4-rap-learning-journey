@@ -12,7 +12,6 @@ This repository contains solutions for the exercises, both ABAP back-end annotat
 
 
 
-
 ## Known Issues
 <!-- You may simply state "No known issues. -->
 No known issues
