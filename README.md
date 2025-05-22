@@ -12,7 +12,7 @@ The [Reuse Tool](https://reuse.software/) must be used for your samples project.
 3. The README.md file (this file):
 Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
 
-# [Title]
+# [Solutions for the course UX406 Getting Started with Creating an SAP Fiori Elements App Based on an OData V4 RAP Service]
 <!-- Please include descriptive title -->
 
 <!--- Register repository https://api.reuse.software/register, then add REUSE badge:
@@ -20,7 +20,7 @@ Please edit this file as it is the primary description file for your project. Yo
 -->
 
 ## Description
-<!-- Please include SEO-friendly description -->
+Solution
 
 ## Requirements
 
